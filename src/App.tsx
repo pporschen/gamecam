@@ -1,3 +1,4 @@
+import DiceSection from "./components/DiceSection";
 import WebcamCapture from "./components/WebcamCapture";
 
 const appStyles = {
@@ -9,6 +10,7 @@ const appStyles = {
 function App() {
 	return (
 		<div className="App" style={appStyles}>
+			<DiceSection />
 			<WebcamCapture />
 		</div>
 	);
