@@ -1,9 +1,11 @@
 import { Button } from '@mui/material';
 import type { ButtonProps } from './types';
 
-const GenericButton = ({ label, ...props }: ButtonProps) => {
+const GenericButton = ({ label, sx, ...props }: ButtonProps) => {
+  const styles = sx || { mt: 2 };
+
   return (
-    <Button variant="contained" color="primary" sx={{ mt: 2 }} {...props}>
+    <Button variant="contained" color="primary" sx={styles} {...props}>
       {label}
     </Button>
   );

@@ -33,23 +33,20 @@ const DiceSection = () => {
         <Typography variant="body1" mr={2}>
           Number of Dice:
         </Typography>
-        <Button
-          variant="outlined"
+        <GenericButton
           onClick={handleDiceDecrease}
           sx={{ minWidth: '30px', padding: '5px' }}
-        >
-          -
-        </Button>
+          label="-"
+        />
         <Typography variant="h6" mx={2}>
           {numOfDice}
         </Typography>
-        <Button
-          variant="outlined"
+        <GenericButton
           onClick={handleDiceIncrease}
           sx={{ minWidth: '30px', padding: '5px' }}
-        >
-          +
-        </Button>
+          label="+"
+        />
+
         <Box display="flex" justifyContent="center" mt={2}>
           {dice.map((value, index) => (
             <Box
