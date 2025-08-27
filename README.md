@@ -67,3 +67,15 @@ export default tseslint.config([
   },
 ])
 ```
+
+# Prettier
+
+This project uses [Prettier](https://prettier.io/) for code formatting. You can format your code by running:
+
+```
+npx prettier --write .
+```
+
+You can also enable format-on-save in your editor for automatic formatting.
+
+Prettier settings are defined in `.prettierrc`.
