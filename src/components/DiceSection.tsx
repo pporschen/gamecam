@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { useState } from 'react';
-import GenericButton from './Buttons/GenericButton';
-import BigButton from './Buttons/BigButton';
+import { GenericButton, BigButton } from './Buttons';
 import Die from './Die';
 
 const INITIAL_DICE = [1];
@@ -32,7 +31,7 @@ const DiceSection = () => {
     background: 'none',
     position: 'absolute',
     left: 20,
-    top: 120,
+    top: 80,
     display: 'flex',
     flexDirection: 'column',
     gap: '2rem',
