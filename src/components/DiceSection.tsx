@@ -1,6 +1,8 @@
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useState } from 'react';
 import GenericButton from './Buttons/GenericButton';
+import BigButton from './Buttons/BigButton';
+import Die from './Die';
 
 const INITIAL_DICE = [1];
 const MIN_NUM_DICE = 1;
@@ -26,46 +28,34 @@ const DiceSection = () => {
     setDice(createDiceArray(newNumOfDice));
   };
 
-  return (
-    <Box>
-      <Typography variant="h4">Dice Roller</Typography>
-      <Box display="flex" alignItems="center" mt={2}>
-        <Typography variant="body1" mr={2}>
-          Number of Dice:
-        </Typography>
-        <GenericButton
-          onClick={handleDiceDecrease}
-          sx={{ minWidth: '30px', padding: '5px' }}
-          label="-"
-        />
-        <Typography variant="h6" mx={2}>
-          {numOfDice}
-        </Typography>
-        <GenericButton
-          onClick={handleDiceIncrease}
-          sx={{ minWidth: '30px', padding: '5px' }}
-          label="+"
-        />
+  const styles = {
+    background: 'none',
+    position: 'absolute',
+    left: 20,
+    top: 120,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '2rem',
+  };
 
-        <Box display="flex" justifyContent="center" mt={2}>
-          {dice.map((value, index) => (
-            <Box
-              key={index}
-              width={50}
-              height={50}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              border={1}
-              borderColor="grey.400"
-              borderRadius={2}
-              mx={1}
-            >
-              <Typography variant="h5">{value}</Typography>
-            </Box>
-          ))}
-        </Box>
-        <GenericButton label="Roll Dice" onClick={rollDice} />
+  return (
+    <Box sx={styles}>
+      <Typography variant="h4">Dice Roller</Typography>
+
+      <Box display={'flex'} gap="2rem" alignItems={'flex-end'}>
+        <GenericButton onClick={handleDiceDecrease} label="-" />
+        <Typography variant="h5">{numOfDice}</Typography>
+        <GenericButton onClick={handleDiceIncrease} label="+" />
+      </Box>
+
+      <Box display="flex" gap={'1rem'}>
+        {dice.map((value, index) => (
+          <Die value={value} index={index} />
+        ))}
+      </Box>
+
+      <Box>
+        <BigButton label="Roll Dice" onClick={rollDice} />
       </Box>
     </Box>
   );
