@@ -1,10 +1,21 @@
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
-import { Box, Button, TextField } from '@mui/material';
-import GenericButton from './Buttons/GenericButton';
+import { Box, TextField, Typography } from '@mui/material';
+import { BigButton, PseudoButton } from './Buttons';
 
 const INPUT_SEPARATOR = ';';
 type Buttons = string[];
+
+const wrapperStyles = {
+  background: 'none',
+  position: 'absolute',
+  right: 80,
+  top: 80,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem',
+  alignItems: 'flex-end',
+};
 
 const ButtonSection = () => {
   const [buttons, setButtons] = useState<Buttons>([]);
@@ -19,12 +30,28 @@ const ButtonSection = () => {
   };
 
   return (
-    <Box>
-      <TextField label="Input" variant="outlined" value={inputValue} onChange={handleInput} />
-      <GenericButton onClick={handleButtonCreation} label="Create Buttons" />
-      {buttons.map((b) => {
-        return <div>{b}</div>;
-      })}
+    <Box sx={wrapperStyles}>
+      <Typography variant="h4">Custom Buttons</Typography>
+
+      <Box>
+        <TextField
+          label="Input"
+          variant="outlined"
+          fullWidth
+          value={inputValue}
+          onChange={handleInput}
+          sx={{ backgroundColor: '#fff', width: '100%' }}
+        />
+      </Box>
+      <Box>
+        <BigButton onClick={handleButtonCreation} label="Create Buttons" />
+      </Box>
+
+      <Box>
+        {buttons.map((b, index) => (
+          <PseudoButton value={b} index={index} />
+        ))}
+      </Box>
     </Box>
   );
 };

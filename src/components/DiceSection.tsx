@@ -7,6 +7,16 @@ const INITIAL_DICE = [1];
 const MIN_NUM_DICE = 1;
 const MAX_NUM_DICE = 6;
 
+const wrapperStyles = {
+  background: 'none',
+  position: 'absolute',
+  left: 20,
+  top: 80,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem',
+};
+
 const DiceSection = () => {
   const [dice, setDice] = useState<number[]>(INITIAL_DICE);
   const numOfDice = dice.length;
@@ -27,18 +37,8 @@ const DiceSection = () => {
     setDice(createDiceArray(newNumOfDice));
   };
 
-  const styles = {
-    background: 'none',
-    position: 'absolute',
-    left: 20,
-    top: 80,
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '2rem',
-  };
-
   return (
-    <Box sx={styles}>
+    <Box sx={wrapperStyles}>
       <Typography variant="h4">Dice Roller</Typography>
 
       <Box display={'flex'} gap="2rem" alignItems={'flex-end'}>

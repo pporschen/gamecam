@@ -11,9 +11,9 @@ const appStyles = {
 function App() {
   return (
     <div className="App" style={appStyles}>
-      <ButtonSection />
-      <DiceSection />
       <WebcamCapture />
+      <DiceSection />
+      <ButtonSection />
     </div>
   );
 }
