@@ -1,10 +1,7 @@
 import { Button } from '@mui/material';
+import type { ButtonProps } from './types';
 
-type BigButtonProps = {
-  label: string;
-} & React.ComponentProps<typeof Button>;
-
-const BigButton = ({ label, sx, ...props }: BigButtonProps) => {
+const BigButton = ({ label, sx, ...props }: ButtonProps) => {
   return (
     <Button
       variant="contained"

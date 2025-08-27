@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 import { Box, Button, TextField } from '@mui/material';
+import GenericButton from './Buttons/GenericButton';
 
 const INPUT_SEPARATOR = ';';
 type Buttons = string[];
@@ -20,7 +21,7 @@ const ButtonSection = () => {
   return (
     <Box>
       <TextField label="Input" variant="outlined" value={inputValue} onChange={handleInput} />
-      <Button onClick={handleButtonCreation}> Create Buttons </Button>
+      <GenericButton onClick={handleButtonCreation} label="Create Buttons" />
       {buttons.map((b) => {
         return <div>{b}</div>;
       })}

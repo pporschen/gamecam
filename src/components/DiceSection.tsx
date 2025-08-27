@@ -1,5 +1,6 @@
 import { Box, Typography, Button } from '@mui/material';
 import { useState } from 'react';
+import GenericButton from './Buttons/GenericButton';
 
 const INITIAL_DICE = [1];
 const MIN_NUM_DICE = 1;
@@ -67,9 +68,7 @@ const DiceSection = () => {
             </Box>
           ))}
         </Box>
-        <Button variant="contained" color="primary" onClick={rollDice} sx={{ mt: 2 }}>
-          Roll Dice
-        </Button>
+        <GenericButton label="Roll Dice" onClick={rollDice} />
       </Box>
     </Box>
   );
