@@ -19,6 +19,7 @@ const PseudoButton = ({ value, index }: PseudoButtonProps) => {
       borderColor="grey.400"
       borderRadius={2}
       bgcolor="white"
+      data-no-dot="true"
       sx={{
         cursor: 'pointer',
         transition: 'background 0.2s',

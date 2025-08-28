@@ -7,6 +7,7 @@ const BigButton = ({ label, sx, ...props }: ButtonProps) => {
       variant="contained"
       color="primary"
       onClick={props.onClick}
+      data-no-dot="true"
       sx={{
         fontSize: '1.25rem',
         padding: '0.75rem 1.5rem',

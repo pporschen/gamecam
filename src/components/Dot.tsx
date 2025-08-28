@@ -1,3 +1,7 @@
+//add the identifier to any html element to prevent a dot
+// from appearing when interacting with the element
+export const NO_DOT_IDENTIFIER = '[data-no-dot=true]';
+
 type DotProps = {
   x: number;
   y: number;

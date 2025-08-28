@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, type MouseEvent } from 'react';
 import ButtonSection from './components/ButtonSection';
 import DiceSection from './components/DiceSection';
 import WebcamCapture from './components/WebcamCapture';
-import Dot from './components/Dot';
+import Dot, { NO_DOT_IDENTIFIER } from './components/Dot';
 
 const appStyles = {
   width: '100vw',
@@ -14,11 +14,9 @@ const appStyles = {
 function App() {
   const [dot, setDot] = useState<{ x: number; y: number } | null>(null);
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (
-      (e.target as HTMLElement).tagName === 'INPUT' ||
-      (e.target as HTMLElement).tagName === 'BUTTON'
-    ) {
+  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (target.closest(NO_DOT_IDENTIFIER)) {
       return;
     }
     setDot({ x: e.clientX, y: e.clientY });

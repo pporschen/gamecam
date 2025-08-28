@@ -5,7 +5,7 @@ const GenericButton = ({ label, sx, ...props }: ButtonProps) => {
   const styles = sx || { mt: 2 };
 
   return (
-    <Button variant="contained" color="primary" sx={styles} {...props}>
+    <Button variant="contained" color="primary" data-no-dot="true" sx={styles} {...props}>
       {label}
     </Button>
   );

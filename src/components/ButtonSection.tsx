@@ -37,7 +37,7 @@ const ButtonSection = () => {
         <TextField
           label="Input"
           variant="outlined"
-          fullWidth
+          data-no-dot="true"
           value={inputValue}
           onChange={handleInput}
           sx={{ backgroundColor: '#fff', width: '100%' }}

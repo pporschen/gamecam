@@ -19,6 +19,7 @@ const Die = ({ value, index }: DieProps) => {
       borderRadius={2}
       bgcolor={'white'}
       color={'black'}
+      data-no-dot="true"
     >
       <Typography variant="h5">{value}</Typography>
     </Box>
