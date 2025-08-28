@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ButtonSection from './components/ButtonSection';
 import DiceSection from './components/DiceSection';
 import WebcamCapture from './components/WebcamCapture';
+import Dot from './components/Dot';
 
 const appStyles = {
   width: '100vw',
@@ -25,21 +26,7 @@ function App() {
 
   return (
     <div className="App" style={appStyles} onClick={handleClick}>
-      {dot && (
-        <div
-          style={{
-            position: 'absolute',
-            left: dot.x - 10,
-            top: dot.y - 10,
-            width: 20,
-            height: 20,
-            borderRadius: '50%',
-            background: 'red',
-            pointerEvents: 'none',
-            zIndex: 9999,
-          }}
-        />
-      )}
+      {dot && <Dot x={dot.x} y={dot.y} />}
       <WebcamCapture />
       <DiceSection />
       <ButtonSection />
